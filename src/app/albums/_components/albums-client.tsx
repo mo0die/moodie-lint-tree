@@ -20,6 +20,21 @@ interface AlbumsClientProps {
 export function AlbumsClient({ albums }: AlbumsClientProps) {
   const [expandedArtist, setExpandedArtist] = useState<string | null>(null);
 
+  // Preload all images silently in the background
+  useEffect(() => {
+    // Create invisible images to preload them
+    const preloadImages = () => {
+      albums.forEach((album) => {
+        const img = new window.Image();
+        img.src = album.cover;
+        // Don't wait for them, just start loading
+      });
+    };
+
+    // Start preloading immediately but don't block rendering
+    preloadImages();
+  }, [albums]);
+
   // Group albums by artist
   const artistsWithAlbums = albums.reduce(
     (acc, album) => {

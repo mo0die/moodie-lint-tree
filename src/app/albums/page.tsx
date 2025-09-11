@@ -2,6 +2,7 @@ import { api, HydrateClient } from "~/trpc/server";
 import { Navigation } from "~/components/navigation";
 import { Footer } from "~/components/footer";
 import { AlbumsClient } from "./_components/albums-client";
+import { ImagePreloader } from "./_components/image-preloader";
 export const dynamic = "force-dynamic";
 
 export default async function AlbumsPage() {
@@ -238,6 +239,9 @@ export default async function AlbumsPage() {
 
   return (
     <HydrateClient>
+      {/* Silent background image preloader */}
+      <ImagePreloader images={albums.map((album) => album.cover)} />
+
       <div className="min-h-screen bg-white pb-24">
         <div className="mx-auto max-w-lg px-8 py-16">
           {/* Header */}
