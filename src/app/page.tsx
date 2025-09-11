@@ -1,10 +1,10 @@
-import { api, HydrateClient } from "~/trpc/server";
+import { HydrateClient } from "~/trpc/server";
 import { Navigation } from "~/components/navigation";
 import { Instagram, Mail, ArrowUpRight } from "lucide-react";
 import { Footer } from "~/components/footer";
 export const dynamic = "force-dynamic";
 export default async function Home() {
-  void api.post.getLatest.prefetch();
+  //void api.post.getLatest.prefetch();
 
   const links = [
     {
