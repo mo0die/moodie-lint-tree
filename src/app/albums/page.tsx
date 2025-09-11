@@ -1,8 +1,8 @@
 import { api, HydrateClient } from "~/trpc/server";
 import { Navigation } from "~/components/navigation";
 import { Footer } from "~/components/footer";
-import { AlbumsClient } from "./_components/albums-client";
-import { ImagePreloader } from "./_components/image-preloader";
+import { AlbumsClient } from "../../components/albums-client";
+import { ImagePreloader } from "~/components/image-preloader";
 export const dynamic = "force-dynamic";
 
 export default async function AlbumsPage() {
