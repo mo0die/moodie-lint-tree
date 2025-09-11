@@ -19,33 +19,6 @@ interface AlbumsClientProps {
 
 export function AlbumsClient({ albums }: AlbumsClientProps) {
   const [expandedArtist, setExpandedArtist] = useState<string | null>(null);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-
-  // Preload all images
-  useEffect(() => {
-    const imagePromises = albums.map((album) => {
-      return new Promise<void>((resolve, reject) => {
-        const img = new window.Image();
-        img.onload = () => {
-          setLoadedImages((prev) => new Set(prev).add(album.cover));
-          resolve();
-        };
-        img.onerror = reject;
-        img.src = album.cover;
-      });
-    });
-
-    Promise.all(imagePromises)
-      .then(() => {
-        setImagesLoaded(true);
-      })
-      .catch((error) => {
-        console.error("Failed to preload some images:", error);
-        // Still show the page even if some images fail
-        setImagesLoaded(true);
-      });
-  }, [albums]);
 
   // Group albums by artist
   const artistsWithAlbums = albums.reduce(
@@ -72,25 +45,6 @@ export function AlbumsClient({ albums }: AlbumsClientProps) {
   const toggleArtist = (artist: string) => {
     setExpandedArtist(expandedArtist === artist ? null : artist);
   };
-
-  // Show loading state while images are preloading
-  if (!imagesLoaded) {
-    return (
-      <div className="flex items-center justify-center py-20">
-        <div className="text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center border-4 border-black bg-white">
-            <div className="h-8 w-8 animate-spin border-4 border-black border-t-transparent"></div>
-          </div>
-          <div className="text-lg font-black tracking-wide uppercase">
-            LOADING ALBUM COVERS...
-          </div>
-          <div className="mt-2 text-sm font-black tracking-widest uppercase opacity-70">
-            {loadedImages.size}/{albums.length} IMAGES LOADED
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="space-y-6">
@@ -147,6 +101,7 @@ export function AlbumsClient({ albums }: AlbumsClientProps) {
                             alt={`${album.title} album cover`}
                             width={64}
                             height={64}
+                            priority={true}
                             className="h-full w-full object-cover"
                           />
                         </div>
