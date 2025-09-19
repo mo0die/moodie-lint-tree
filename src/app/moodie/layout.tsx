@@ -6,9 +6,9 @@ import { JetBrains_Mono } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata: Metadata = {
-  title: "MOODIE - NEUBRUTALIST PORTFOLIO",
-  description: "A BOLD BLACK & WHITE PORTFOLIO EXPERIENCE",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: "MOODIE",
+  description: "",
+  icons: [{ rel: "icon", url: "public/icon.ico" }],
 };
 
 const jetbrainsMono = JetBrains_Mono({
