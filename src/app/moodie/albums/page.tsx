@@ -1,7 +1,7 @@
 import { api, HydrateClient } from "~/trpc/server";
 import { Navigation } from "~/components/navigation";
 import { Footer } from "~/components/footer";
-import { AlbumsClient } from "../../components/albums-client";
+import { AlbumsClient } from "../../../components/albums-client";
 import { ImagePreloader } from "~/components/image-preloader";
 export const dynamic = "force-dynamic";
 

@@ -7,10 +7,10 @@ interface NavigationProps {
 
 export function Navigation({ currentPath }: NavigationProps) {
   const tabs = [
-    { href: "/", label: "HOME", icon: Home },
-    { href: "/software", label: "SOFTWARE", icon: Briefcase },
-    { href: "/sponsors", label: "SPONSORS", icon: Users },
-    { href: "/albums", label: "ALBUMS", icon: Heart },
+    { href: "/moodie", label: "HOME", icon: Home },
+    { href: "/moodie/software", label: "SOFTWARE", icon: Briefcase },
+    { href: "/moodie/sponsors", label: "SPONSORS", icon: Users },
+    { href: "/moodie/albums", label: "ALBUMS", icon: Heart },
   ];
 
   return (
