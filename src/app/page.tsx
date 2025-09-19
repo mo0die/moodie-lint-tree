@@ -1,6 +1,4 @@
-import { Navigation } from "~/components/navigation";
 import { Footer } from "~/components/footer";
-import { ArrowUpRight } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -32,7 +30,6 @@ export default function Home() {
             className="mt-4 flex items-center justify-center gap-2 text-center text-sm font-black tracking-widest uppercase hover:opacity-80"
           >
             DEMO
-            <ArrowUpRight className="h-5 w-5" />
           </a>
 
           {/* Feature list */}
@@ -46,7 +43,6 @@ export default function Home() {
               className="neubrutalism-btn flex items-center justify-center gap-2"
             >
               Follow Updates
-              <ArrowUpRight className="h-5 w-5" />
             </a>
           </div>
         </div>
