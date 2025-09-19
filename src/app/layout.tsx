@@ -8,7 +8,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 export const metadata: Metadata = {
   title: "MOODIE - NEUBRUTALIST PORTFOLIO",
   description: "A BOLD BLACK & WHITE PORTFOLIO EXPERIENCE",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "public/icon.ico" }],
 };
 
 const jetbrainsMono = JetBrains_Mono({
