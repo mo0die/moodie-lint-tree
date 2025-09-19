@@ -2,8 +2,8 @@ import { HydrateClient } from "~/trpc/server";
 import { Navigation } from "~/components/navigation";
 import { Instagram, Mail, ArrowUpRight, ChevronDown } from "lucide-react";
 import { Footer } from "~/components/footer";
-import { TikTokIcon } from "~/components/icons/tiktok-icon";
-import { PalestineIcon } from "~/components/icons/palastine-icon";
+import { TikTokIcon } from "src/components/icons/tiktok-icon";
+import { PalestineIcon } from "src/components/icons/palastine-icon";
 import {
   DropdownMenu,
   DropdownMenuContent,
