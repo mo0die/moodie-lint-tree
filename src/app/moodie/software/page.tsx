@@ -7,16 +7,16 @@ export default async function SponsorsPage() {
   void api.post.getLatest.prefetch();
 
   const sponsors = [
-    {
-      name: "GYM 54",
-      description: "PROGRESSIVE OVERLOAD GYM APPLICATION",
-      url: "https://www.gym54.com/",
-      logo: "54",
-    },
+    // {
+    //   name: "GYM 54",
+    //   description: "PROGRESSIVE OVERLOAD GYM APPLICATION",
+    //   url: "https://www.gym54.com/",
+    //   logo: "54",
+    // },
     {
       name: "VALLEY MOTORSPORTS",
       description: "AUTO CARPARTS",
-      url: "https://stripe.com",
+      url: "https://www.valleymotorsports.ca/",
       logo: "VMS",
     },
   ];

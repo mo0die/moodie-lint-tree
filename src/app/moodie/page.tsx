@@ -21,11 +21,6 @@ export default async function Home() {
       icon: Instagram,
     },
     {
-      title: "TIKTOK",
-      url: "https://x.com/moodie_f22",
-      icon: TikTokIcon,
-    },
-    {
       title: "CONTACT",
       url: "mailto:moodie.f22@gmail.com",
       icon: Mail,
